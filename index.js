@@ -45,8 +45,8 @@ if (!TOKEN) {
 const bot = new TelegramBot(TOKEN, { webHook: true });
 
 // Build webhook URL: prefer explicit WEBHOOK_URL env; otherwise try RENDER_EXTERNAL_URL
-const explicitWebhook = `https://your-service.onrender.com/webhook/${TOKEN}`; // e.g. https://your-service.onrender.com/webhook/<TOKEN>
-const renderUrl = process.env.RENDER_EXTERNAL_URL; // provided by Render for the service
+const explicitWebhook = `https://cptrackbot.onrender.com/webhook/${TOKEN}`; // e.g. https://your-service.onrender.com/webhook/<TOKEN>
+const renderUrl = "https://cptrackbot.onrender.com"; // provided by Render for the service
 const WEBHOOK_URL = explicitWebhook || (renderUrl ? `${renderUrl.replace(/\/$/, "")}/webhook/${TOKEN}` : null);
 
 if (!WEBHOOK_URL) {
